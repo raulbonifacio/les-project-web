@@ -1,0 +1,66 @@
+
+extends /layouts/simple
+
+include /mixins/email-input
+include /mixins/number-input
+include /mixins/password-input
+include /mixins/text-input
+include /mixins/date-input
+include /mixins/general-error
+include /mixins/form
+
+block title
+	| Register
+
+block section
+
+	.row
+		.col.mb-3
+			h4.text-center.text-muted Formulário de registro
+			br
+			p.text-center Já possui uma conta? Vá para a 
+				a(href="/login") página de login !
+			hr
+
+	+form("/login", "POST") 
+		.row
+			.col-12
+				p.small.text-muted Informações de login:
+			.col-12.mb-3
+				+email-input("email") E-mail
+			.col-12.col-lg-6.mb-3
+				+password-input("password") Senha
+			.col-12.col-lg-6.mb-3
+				+password-input("passwordConfirmation") Confirmação de senha
+		.row 
+			.col-12
+				p.small.text-muted Informações básicas:
+			.col-12.col-lg-6.mb-3
+				+text-input("firstName") Nome 
+			.col-12.col-lg-6.mb-3
+				+text-input("lastName") Sobrenome 
+			.col-12.mb-3
+				+date-input("birthDate") Data de nascimento 
+
+		.row.address-autofill
+			.col-12
+				p.small.text-muted Informações de endereço:
+			.col-12.mb-3
+				+text-input("zipCode").cep CEP 
+			.col-12.col-lg-8.mb-3
+				+text-input("city", "", true).city Cidade 
+			.col-12.col-lg-4.mb-3
+				+text-input("state", "", true).abbreviation Estado 
+			.col-12.col-lg-9.mb-3
+				+text-input("address").address Logradouro
+			.col-12.col-lg-3.mb-3
+				+number-input("number") Number
+			.col-12.mb-3
+				+text-input("neighbourhood").neighbourhood Bairro
+			.col-12.mb-3
+				+text-input("complement") Complemento
+			
+		.row
+			.col-12.my-2.text-end
+				button.btn.btn-primary.float-right Login
+					i.fas.fa-sign-in-alt.ms-2

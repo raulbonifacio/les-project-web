@@ -1,0 +1,69 @@
+
+#aside-accordion.accordion.accordion-flush
+	.accordion-item
+		.accordion-header
+			button.accordion-button.collapsed(data-bs-toggle="collapse" data-bs-target="#dashboard-collapse")
+				i.fas.fa-chart-line.me-2
+				| Dashboard
+		#dashboard-collapse.accordion-collapse.collapse(data-bs-parent="#aside-accordion")
+			nav.nav.flex-column.p-3
+				a.nav-link.path-activable(href="/app/dashboard")
+					| Home
+			hr
+	.accordion-item
+		.accordion-header
+			button.accordion-button.collapsed(data-bs-toggle="collapse" data-bs-target="#forecasting-collapse")
+				i.fas.fa-binoculars.me-2
+				| Forecasting
+		#forecasting-collapse.accordion-collapse.collapse(data-bs-parent="#aside-accordion")
+			nav.nav.flex-column.p-3
+				a.nav-link.path-activable(href="/app/dashboard")
+					| Montly
+			hr
+	.accordion-item
+		.accordion-header
+			button.accordion-button.collapsed(data-bs-toggle="collapse" data-bs-target="#revenue-collapse")
+				i.fas.fa-dollar-sign.me-2
+				| Revenue
+		#revenue-collapse.accordion-collapse.collapse(data-bs-parent="#aside-accordion")
+			nav.nav.flex-column.p-3
+				a.nav-link.path-activable(href="/app/dashboard")
+					| Montly
+			hr
+	.accordion-item
+		.accordion-header
+			button.accordion-button.collapsed(data-bs-toggle="collapse" data-bs-target="#variable-expenses-collapse")
+				small: i.fas.fa-credit-card.me-2
+				| Variable expenses
+		#variable-expenses-collapse.accodion-collapse.collapse(data-bs-parent="#aside-accordion")
+			nav.nav.flex-column.p-3
+				a.nav-link.path-activable(href="/app/dashboard")
+					| Monthly variable expenses
+			hr
+	.accordion-item
+		.accordion-header
+			button.accordion-button.collapsed(data-bs-toggle="collapse" data-bs-target="#fixed-expenses-collapse")
+				i.fas.fa-file-invoice-dollar.me-2
+				| Fixed expenses
+		#fixed-expenses-collapse.accodion-collapse.collapse(data-bs-parent="#aside-accordion")
+			nav.nav.flex-column.p-3
+				a.nav-link.path-activable(href="/app/monthly-fixed-expenses")
+					i.fas.fa-calendar-alt.me-3
+					| Monthly fixed expenses
+				a.nav-link.path-activable(href="/app/weekly-fixed-expenses")
+					i.fas.fa-calendar-week.me-3
+					| Weekly fixed expenses
+				a.nav-link.path-activable(href="/app/daily-fixed-expenses")
+					i.fas.fa-calendar-day.me-3
+					| Daily fixed expenses
+			hr
+	.accordion-item
+		.accordion-header
+			button.accordion-button.collapsed(data-bs-toggle="collapse" data-bs-target="#settings-collapse")
+				i.fas.fa-sliders-h.me-3
+				| Settings 
+		#settings-collapse.accodion-collapse.collapse(data-bs-parent="#aside-accordion")
+			nav.nav.flex-column.p-3
+				a.nav-link.path-activable(href="/app/dashboard")
+					| Users 
+

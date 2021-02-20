@@ -1,0 +1,5 @@
+mixin checkbox-input
+	.form-check
+		input.form-check-input(type="checkbox" id=`${attributes.name}-input` name=attributes.name checked=attributes.checked)
+		label.form-check-label(for=`${attributes.name}-input`)
+			block

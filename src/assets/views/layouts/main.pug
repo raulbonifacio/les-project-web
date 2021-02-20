@@ -1,0 +1,27 @@
+extends /layouts/app
+
+block body
+	main.container.vh-100
+		.row.h-100 
+			aside.col-md-5.col-lg-4.py-4.mh-100: nav
+				h1.py-3.text-center Sistema
+				include /includes/navigation
+		
+			section.col.h-100.overflow-auto
+				.row.py-2
+					.col
+						button#back-button.btn.btn-link
+							small: i.fas.fa-arrow-left.me-2
+							| Back
+					.col.text-end
+						button#forward-button.btn.btn-link
+							| Forward
+							small: i.fas.fa-arrow-right.ms-2
+					.col-12.text-center
+						h2
+							block icon
+							block title
+						p.text-secondary: i
+							block subtitle
+
+				block section

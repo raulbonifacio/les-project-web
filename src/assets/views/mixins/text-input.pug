@@ -1,0 +1,16 @@
+include /mixins/invalid-feedback
+mixin text-input(name, value = "", readonly = false)
+	.form-floating
+		input.form-control(
+			id=`${name}-input`,
+			type="text",
+			value= old[name] || value,
+			name=name,
+			placeholder="..."
+			class= (errors && errors[name]) && "is-invalid"
+			readonly=readonly
+		)&attributes(attributes)
+
+		label.form-label(for=`${name}-input`)
+			block
+		+invalid-feedback(name)

@@ -1,0 +1,4 @@
+
+mixin invalid-feedback(errorName)
+	if errors && errors[errorName]
+		.invalid-feedback.text-center.bg-light.py-2= errors[errorName]

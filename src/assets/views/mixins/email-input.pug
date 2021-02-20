@@ -1,0 +1,17 @@
+include /mixins/invalid-feedback
+
+mixin email-input(name, value="", readonly = false)
+	.form-floating
+		input.form-control(
+			id=`${name}-input`,
+			type="email",
+			value= old[name] || value,
+			name=name,
+			placeholder="email@example.com"
+			class= (errors && errors[name]) && "is-invalid"
+			readonly=readonly
+		)
+		label.form-label(for=`${name}-input`)
+			i.far.fa-envelope.small.me-2
+			block
+		+invalid-feedback(name)

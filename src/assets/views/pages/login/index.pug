@@ -1,0 +1,21 @@
+extends /layouts/simple
+
+include /mixins/email-input
+include /mixins/password-input
+include /mixins/general-error
+include /mixins/form
+
+block title
+	| Login
+
+block section
+	+form("/login", "POST") 
+		.row
+			.col-12.mb-3
+				+email-input("email") E-mail:
+			.col-12.mb-3
+				+password-input("password") Password:
+		.row
+			.col-12.my-2.text-end
+				button.btn.btn-primary.float-right Login
+					i.fas.fa-sign-in-alt.ms-2

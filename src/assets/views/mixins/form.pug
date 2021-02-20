@@ -1,0 +1,11 @@
+
+include /mixins/csrf-token
+include /mixins/general-error
+include /mixins/method-override
+
+mixin form( action = "/", method = "GET")
+	form(action=action, method=(['POST', 'PUT', 'DELETE'].includes(method) ? "POST" : "GET"), novalidate)
+		block
+		+method-override(method)
+		+csrf-token
+		+general-error

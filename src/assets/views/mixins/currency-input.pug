@@ -1,0 +1,13 @@
+mixin currency-input
+	label.form-label(for=`${attributes.name}-input`)
+		block
+	.input-group
+		span.input-group-text R$
+		input.form-control(id=`${attributes.name}-input`,
+		type="number", 
+		name=attributes.name,
+		step="0.01",
+		min="0.00",
+		value=attributes.value,
+		placeholder=attributes.placeholder || "0.00"
+	)

@@ -1,0 +1,18 @@
+mixin date-input(name, value="", readonly=false)
+	label.form-label(for=`${name}-input`)
+		block
+	.input-group
+		.form-floating.w-25
+			input.form-control(id=`${name}-day-input` value="1" type="number" min="1" max="31" step="1" name=`${name}Day`)
+			label(for=`${name}-day-input`) Day
+		.form-floating.w-50
+			select.border-squared.form-select(id=`${name}-month-input` name=`${name}Month`)
+				each month, index in ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] 
+					option(value=index)= month
+			label(for=`${name}-month-input`) Month
+		.form-floating.w-25
+			input.form-control(id=`${name}-year-input` value="1990" type="number" min="1" step="1" name=`${name}Year`)
+			label(for=`${name}-year-input`) Year
+
+		input.date-input(type="hidden" name=name value=(old[name] || null) )
+
