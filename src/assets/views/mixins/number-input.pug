@@ -1,6 +1,6 @@
 include /mixins/invalid-feedback
 
-mixin number-input(name, value="", readonly=false)
+mixin number-input(name,readonly=false, value="")
 	.form-floating
 		input.form-control(
 			id=`${name}-input`,
@@ -8,6 +8,7 @@ mixin number-input(name, value="", readonly=false)
 			value= old[name] || value,
 			name=name,
 			min=1,
+			class= (errors && errors[name]) && "is-invalid"
 			placeholder=attributes.placeholder
 		)&attributes(attributes)
 		label.form-label(for=`${attributes.name}-input`)
